@@ -28,43 +28,133 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenu1 = new javax.swing.JMenu();
+        btnMenuSalir = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        mnuItAlumnosAgregar = new javax.swing.JMenu();
+        mnuItAlumnosLista = new javax.swing.JMenuItem();
+        mnuItAlumnosEditar = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        mnuItAlumnosBorrar = new javax.swing.JMenuItem();
+        mnuUsuarios = new javax.swing.JMenu();
+        mnuItUsuariosNuevo = new javax.swing.JMenuItem();
+        mnuItUsuariosLista = new javax.swing.JMenuItem();
+        mnuItUsuariosEditar = new javax.swing.JMenuItem();
+        mnuItUsuariosBorrar = new javax.swing.JMenuItem();
+        mnuMaterias = new javax.swing.JMenu();
+        mnuItMateriasNuevo = new javax.swing.JMenuItem();
+        mnuItMateriasLista = new javax.swing.JMenuItem();
+        mnuItMateriasEditar = new javax.swing.JMenuItem();
+        mnuItMateriasBorrar = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu2.setText("Alumnos");
-        jMenu2.setToolTipText("");
-
-        jMenuItem1.setText("Agregar");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        btnMenuSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mysql_alumnos/icons/exit.png"))); // NOI18N
+        btnMenuSalir.setText("Salir");
+        btnMenuSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                btnMenuSalirActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem1);
 
-        jMenuItem2.setText("Mostrar lista");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        mnuItAlumnosAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mysql_alumnos/icons/User-50.png"))); // NOI18N
+        mnuItAlumnosAgregar.setText("Alumnos");
+        mnuItAlumnosAgregar.setToolTipText("");
+
+        mnuItAlumnosLista.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
+        mnuItAlumnosLista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mysql_alumnos/icons/Add User Group Man Man-16.png"))); // NOI18N
+        mnuItAlumnosLista.setText("Nuevo");
+        mnuItAlumnosLista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                mnuItAlumnosListaActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem2);
+        mnuItAlumnosAgregar.add(mnuItAlumnosLista);
 
-        jMenuItem3.setText("Modificar");
-        jMenu2.add(jMenuItem3);
+        mnuItAlumnosEditar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
+        mnuItAlumnosEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mysql_alumnos/icons/User Group Man Man-16.png"))); // NOI18N
+        mnuItAlumnosEditar.setText("Mostrar lista");
+        mnuItAlumnosEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuItAlumnosEditarActionPerformed(evt);
+            }
+        });
+        mnuItAlumnosAgregar.add(mnuItAlumnosEditar);
 
-        jMenuItem4.setText("Borrar");
-        jMenu2.add(jMenuItem4);
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mysql_alumnos/icons/Edit User Male-16.png"))); // NOI18N
+        jMenuItem3.setText("Editar");
+        mnuItAlumnosAgregar.add(jMenuItem3);
 
-        jMenuBar1.add(jMenu2);
+        mnuItAlumnosBorrar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
+        mnuItAlumnosBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mysql_alumnos/icons/Remove User Male-16.png"))); // NOI18N
+        mnuItAlumnosBorrar.setText("Borrar");
+        mnuItAlumnosAgregar.add(mnuItAlumnosBorrar);
+
+        jMenuBar1.add(mnuItAlumnosAgregar);
+
+        mnuUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mysql_alumnos/icons/users_48.png"))); // NOI18N
+        mnuUsuarios.setText("Usuarios");
+
+        mnuItUsuariosNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mysql_alumnos/icons/user-plus.png"))); // NOI18N
+        mnuItUsuariosNuevo.setText("Nuevo");
+        mnuItUsuariosNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuItUsuariosNuevoActionPerformed(evt);
+            }
+        });
+        mnuUsuarios.add(mnuItUsuariosNuevo);
+
+        mnuItUsuariosLista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mysql_alumnos/icons/users.png"))); // NOI18N
+        mnuItUsuariosLista.setText("Mostrar");
+        mnuItUsuariosLista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuItUsuariosListaActionPerformed(evt);
+            }
+        });
+        mnuUsuarios.add(mnuItUsuariosLista);
+
+        mnuItUsuariosEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mysql_alumnos/icons/user-check.png"))); // NOI18N
+        mnuItUsuariosEditar.setText("Editar");
+        mnuUsuarios.add(mnuItUsuariosEditar);
+
+        mnuItUsuariosBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mysql_alumnos/icons/user-minus.png"))); // NOI18N
+        mnuItUsuariosBorrar.setText("Borrar");
+        mnuUsuarios.add(mnuItUsuariosBorrar);
+
+        jMenuBar1.add(mnuUsuarios);
+
+        mnuMaterias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mysql_alumnos/icons/book.png"))); // NOI18N
+        mnuMaterias.setText("Materias");
+
+        mnuItMateriasNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mysql_alumnos/icons/book-add.png"))); // NOI18N
+        mnuItMateriasNuevo.setText("Nuevo");
+        mnuItMateriasNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuItMateriasNuevoActionPerformed(evt);
+            }
+        });
+        mnuMaterias.add(mnuItMateriasNuevo);
+
+        mnuItMateriasLista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mysql_alumnos/icons/books_16.png"))); // NOI18N
+        mnuItMateriasLista.setText("Mostrar");
+        mnuMaterias.add(mnuItMateriasLista);
+
+        mnuItMateriasEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mysql_alumnos/icons/book-edit.png"))); // NOI18N
+        mnuItMateriasEditar.setText("Editar");
+        mnuItMateriasEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuItMateriasEditarActionPerformed(evt);
+            }
+        });
+        mnuMaterias.add(mnuItMateriasEditar);
+
+        mnuItMateriasBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mysql_alumnos/icons/book-remove.png"))); // NOI18N
+        mnuItMateriasBorrar.setText("Borrar");
+        mnuMaterias.add(mnuItMateriasBorrar);
+
+        jMenuBar1.add(mnuMaterias);
 
         setJMenuBar(jMenuBar1);
 
@@ -72,31 +162,70 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(691, Short.MAX_VALUE)
+                .addComponent(btnMenuSalir)
+                .addGap(18, 18, 18))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 278, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(469, Short.MAX_VALUE)
+                .addComponent(btnMenuSalir)
+                .addGap(18, 18, 18))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void mnuItAlumnosEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItAlumnosEditarActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
         
-        Lista objLista = new Lista();
+        AlumnoLista objLista = new AlumnoLista();
         objLista.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_mnuItAlumnosEditarActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void mnuItAlumnosListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItAlumnosListaActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        Agregar frmAgregar = new Agregar();
+        this.dispose();
+        
+        AlumnoAgregar frmAgregar = new AlumnoAgregar();
         frmAgregar.setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+        
+    }//GEN-LAST:event_mnuItAlumnosListaActionPerformed
+
+    private void mnuItUsuariosListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItUsuariosListaActionPerformed
+        // TODO add your handling code here:
+        UsuarioLista frmUs = new UsuarioLista(this, rootPaneCheckingEnabled);
+        frmUs.setModal(true);
+        frmUs.setVisible(true);
+    }//GEN-LAST:event_mnuItUsuariosListaActionPerformed
+
+    private void mnuItMateriasNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItMateriasNuevoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnuItMateriasNuevoActionPerformed
+
+    private void mnuItMateriasEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItMateriasEditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnuItMateriasEditarActionPerformed
+
+    private void mnuItUsuariosNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItUsuariosNuevoActionPerformed
+        // TODO add your handling code here:
+        UsuarioAgregar frmUsuarioAgregar = new UsuarioAgregar(this, rootPaneCheckingEnabled);
+        frmUsuarioAgregar.setModal(true);
+        frmUsuarioAgregar.setVisible(true);
+        
+        
+        
+    }//GEN-LAST:event_mnuItUsuariosNuevoActionPerformed
+
+    private void btnMenuSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuSalirActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnMenuSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,12 +263,23 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnMenuSalir;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenu mnuItAlumnosAgregar;
+    private javax.swing.JMenuItem mnuItAlumnosBorrar;
+    private javax.swing.JMenuItem mnuItAlumnosEditar;
+    private javax.swing.JMenuItem mnuItAlumnosLista;
+    private javax.swing.JMenuItem mnuItMateriasBorrar;
+    private javax.swing.JMenuItem mnuItMateriasEditar;
+    private javax.swing.JMenuItem mnuItMateriasLista;
+    private javax.swing.JMenuItem mnuItMateriasNuevo;
+    private javax.swing.JMenuItem mnuItUsuariosBorrar;
+    private javax.swing.JMenuItem mnuItUsuariosEditar;
+    private javax.swing.JMenuItem mnuItUsuariosLista;
+    private javax.swing.JMenuItem mnuItUsuariosNuevo;
+    private javax.swing.JMenu mnuMaterias;
+    private javax.swing.JMenu mnuUsuarios;
     // End of variables declaration//GEN-END:variables
 }

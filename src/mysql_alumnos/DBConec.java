@@ -27,8 +27,8 @@ public class DBConec {
 //obtenemos la conexión
          conn = DriverManager.getConnection(url,login,password);
  
-         if (conn != null){
-            JOptionPane.showMessageDialog(null, "Conexión con éxito a la base de datos" + bd);
+         if (conn == null){
+            JOptionPane.showMessageDialog(null, "Error al abril la BD" + bd);
          }
       }
       catch(SQLException e){

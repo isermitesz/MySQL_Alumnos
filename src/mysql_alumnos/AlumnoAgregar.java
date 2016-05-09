@@ -5,16 +5,20 @@
  */
 package mysql_alumnos;
 
+import mysql_alumnos.Alumno;
+import mysql_alumnos.AlumnoDAO;
+import mysql_alumnos.Menu;
+
 /**
  *
  * @author iserm
  */
-public class Agregar extends javax.swing.JFrame {
+public class AlumnoAgregar extends javax.swing.JFrame {
 
     /**
      * Creates new form Agregar
      */
-    public Agregar() {
+    public AlumnoAgregar() {
         initComponents();
     }
 
@@ -156,6 +160,15 @@ public class Agregar extends javax.swing.JFrame {
         objAlumno.setSemestre(Integer.valueOf(cmbSemestre.getSelectedItem().toString()));
         
         objAgregar.agregarAlumno(objAlumno);
+        limpiarFormulario();
+        this.setVisible(false);
+        this.dispose();
+        
+        Menu frmMenu = new Menu();
+        frmMenu.setVisible(true);
+        
+        
+        
         
         
     }//GEN-LAST:event_btnAgregarActionPerformed
@@ -177,20 +190,21 @@ public class Agregar extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Agregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlumnoAgregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Agregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlumnoAgregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Agregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlumnoAgregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Agregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlumnoAgregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Agregar().setVisible(true);
+                new AlumnoAgregar().setVisible(true);
             }
         });
     }
